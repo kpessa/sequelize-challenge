@@ -1,0 +1,4 @@
+node_modules
+cloned/
+.env
+.DS_Store
