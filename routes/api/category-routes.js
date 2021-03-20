@@ -4,8 +4,8 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
+  //! find all categories
+  //! be sure to include its associated Products
   Category.findAll({
     include: Product,
   })
@@ -14,17 +14,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  //! find one category by its `id` value
+  //! be sure to include its associated Products
   Category.findByPk(req.params.id, {
     include: Product,
   })
-    .then(categories => res.json(categories))
+    .then(category => res.json(category))
     .catch(err => res.status(500).json(err));
 });
 
 router.post('/', (req, res) => {
-  // create a new category
+  //! create a new category
   Category.create(req.body)
     .then(category => res.json(category))
     .catch(err => res.status(500).json(err));
@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then(updatedCategory => res.json(updatedCategory))
+    .then(updatedCategory => res.json({ ...{ message: `Category with id ${req.params.id} has been updated` }, ...updatedCategory }))
     .catch(err => res.status(500).json(err));
 });
 
@@ -48,7 +48,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then(updatedCategory => res.json(updatedCategory))
+    .then(deletedResponse => res.json({ ...{ message: `Category with id ${req.params.id} has been deleted` }, ...deletedResponse }))
     .catch(err => res.status(500).json(err));
 });
 

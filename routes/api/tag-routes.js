@@ -39,7 +39,11 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then(tag => res.json(tag))
+    .then(tag => {
+      if (tag && tag != 0) {
+        res.json({ ...{ message: 'tag has been updated' }, ...tag });
+      } else res.status(400).json({ message: 'no associated tag with that ID' });
+    })
     .catch(err => res.status(500).json(err));
 });
 
@@ -50,7 +54,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then(tag => res.json(tag))
+    .then(tag => res.json({ ...{ message: 'tag has been deleted' }, ...tag }))
     .catch(err => res.status(500).json(err));
 });
 
