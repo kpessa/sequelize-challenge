@@ -40,8 +40,8 @@ router.put('/:id', (req, res) => {
     },
   })
     .then(tag => {
-      if (tag && tag != 0) {
-        res.json({ ...{ message: 'tag has been updated' }, ...tag });
+      if (tag) {
+        res.json({ ...{ message: `tag with id ${req.params.id} has been updated!` }, ...tag });
       } else res.status(400).json({ message: 'no associated tag with that ID' });
     })
     .catch(err => res.status(500).json(err));
