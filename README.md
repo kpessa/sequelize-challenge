@@ -1,4 +1,4 @@
-<a href="https://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT badge"></a>
+<a href="https://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT badge"></a>
 
 # sequelize-challenge
 
@@ -38,8 +38,7 @@ Run <code>npm install</code> once repository is cloned or downloaded.
 
 ## **License**
 
-<a href="https://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT badge"></a>
-
+<a href="https://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT badge"></a>
   <p>A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.</p>
 
 ## **Contributing**
